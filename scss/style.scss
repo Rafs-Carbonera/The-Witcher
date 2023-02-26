@@ -27,7 +27,7 @@ body {
   a {
     color: variables.$text-color;
     text-decoration: none;
-    transition: 0.4s;
+    transition: 0.2s;
   }
 
   ul {
@@ -63,6 +63,10 @@ body {
 
         li {
           margin: 0 1rem;
+
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
     }

@@ -19,7 +19,7 @@ body {
 body a {
   color: #000;
   text-decoration: none;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 body ul {
   list-style: none;
@@ -53,6 +53,9 @@ body .header-social ul {
 }
 body .header-social ul li {
   margin: 0 1rem;
+}
+body .header-social ul li:hover {
+  transform: scale(1.1);
 }
 body .home {
   max-width: 1400px;
