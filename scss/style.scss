@@ -8,8 +8,21 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  background-color: #444444;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  background: rgb(68, 68, 68);
+  background: linear-gradient(
+    180deg,
+    rgba(68, 68, 68, 1) 0%,
+    rgba(112, 112, 112, 1) 46%,
+    rgba(226, 226, 226, 1) 100%
+  );
 
   a {
     color: variables.$text-color;
@@ -22,12 +35,82 @@ body {
   }
 
   .header {
-    display: flex;
+    @include mixins.flex-center;
     justify-content: space-between;
     @include mixins.container;
+
+    &-navbar {
+      ul {
+        @include mixins.flex-center;
+
+        li {
+          margin: 0 1rem;
+          text-transform: uppercase;
+          font-size: 1rem;
+
+          a {
+            &:hover {
+              color: variables.$secondary-color;
+            }
+          }
+        }
+      }
+    }
+
+    &-social {
+      ul {
+        @include mixins.flex-center;
+
+        li {
+          margin: 0 1rem;
+        }
+      }
+    }
   }
 
-  .header-tittle {
-    font-size: 3rem;
+  .home {
+    @include mixins.container;
+    @include mixins.flex-center;
+    justify-content: space-between;
+
+    &-img {
+      width: 50rem;
+      cursor: pointer;
+      box-shadow: 25px 25px 12px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      &-texto {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      &-btn {
+        border: 1px solid variables.$text-color;
+        padding: 1rem 3.5rem;
+        background-color: variables.$primary-color;
+        -webkit-box-shadow: inset 7px -2px 50px -14px rgba(66, 68, 90, 1);
+        -moz-box-shadow: inset 7px -2px 50px -14px rgba(66, 68, 90, 1);
+        box-shadow: inset 7px -2px 50px -14px rgba(66, 68, 90, 1);
+        color: variables.$secondary-color;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        -webkit-box-shadow: 0px 20px 50px -14px rgba(66, 68, 90, 1);
+        -moz-box-shadow: 0px 20px 50px -14px rgba(66, 68, 90, 1);
+        box-shadow: 0px 20px 50px -14px rgba(66, 68, 90, 1);
+
+        &:hover {
+          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+        }
+      }
+    }
   }
 }
