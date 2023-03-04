@@ -1,5 +1,5 @@
-@use "mixins";
-@use "variables";
+@use "./mixins";
+@use "./variables";
 
 * {
   font-family: "Merriweather Sans", sans-serif;
@@ -13,12 +13,11 @@ html {
 }
 
 body {
-  background-color: $bg-color;
+  background-color: variables.$bg-color;
 
   a {
     color: variables.$text-color;
     text-decoration: none;
-    transition: 0.2s;
   }
 
   ul {
@@ -26,22 +25,42 @@ body {
   }
 
   .header {
-    @include mixins.flex-center;
-    justify-content: space-between;
     @include mixins.container;
+    @include mixins.flex-center;
+    justify-content: flex-end;
 
-    &-tittle {
-      img {
-        width: 250px;
+    &-logo {
+      margin-right: auto;
+      width: 250px;
+    }
+
+    &-navbar {
+      ul {
+        @include mixins.flex-center;
+        justify-content: space-between;
+
+        li {
+          padding: 15px;
+
+          a {
+            text-transform: uppercase;
+          }
+
+          a:hover {
+            color: variables.$secondary-color;
+          }
+        }
       }
     }
 
-    &-div {
-      @include mixins.flex-center;
-      justify-content: space-between;
+    &-btn {
+      @include mixins.btn;
+      font-size: 1rem;
+      padding: 0.5rem 1.5rem;
+      margin-left: 25px;
 
-      &-navbar {
-        @include mixins.flex-center;
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }
@@ -52,7 +71,7 @@ body {
     justify-content: space-between;
 
     &-img {
-      width: 50rem;
+      width: 55rem;
       cursor: pointer;
       box-shadow: 25px 25px 12px 0px rgba(0, 0, 0, 0.1);
     }
@@ -71,12 +90,10 @@ body {
 
       &-btn {
         @include mixins.btn;
-        padding: 1rem 3.5rem;
+        padding: 1rem 2.5rem;
 
         &:hover {
-          transform: scale(1.2);
-          -webkit-transform: scale(1.2);
-          -moz-transform: scale(1.2);
+          transform: scale(1.1);
         }
       }
     }
