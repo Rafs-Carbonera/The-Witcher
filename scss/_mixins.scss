@@ -9,5 +9,18 @@
 @mixin flex-center {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+@mixin btn {
+  border: 1px solid variables.$text-color;
+  background-color: variables.$primary-color;
+  -webkit-box-shadow: inset 7px -2px 50px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: inset 7px -2px 50px -14px rgba(66, 68, 90, 1);
+  box-shadow: inset 7px -2px 50px -14px rgba(66, 68, 90, 1);
+  color: variables.$secondary-color;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  -webkit-box-shadow: 0px 20px 50px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 20px 50px -14px rgba(66, 68, 90, 1);
+  box-shadow: 0px 20px 50px -14px rgba(66, 68, 90, 1);
 }
