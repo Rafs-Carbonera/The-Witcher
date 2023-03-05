@@ -74,7 +74,7 @@ body {
     &-img {
       width: 55rem;
       cursor: pointer;
-      box-shadow: 25px 25px 12px 0px rgba(0, 0, 0, 0.1);
+      @include mixins.shadow;
     }
 
     &-info {
@@ -96,6 +96,63 @@ body {
 
         &:hover {
           transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .noticias {
+    @include mixins.flex-center;
+    flex-direction: column;
+    padding-bottom: 30px;
+
+    &-titulo {
+      text-transform: uppercase;
+      padding-bottom: 20px;
+    }
+
+    &-row {
+      display: flex;
+      gap: 35px;
+
+      &-div {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        align-content: flex-start;
+
+        img {
+          width: 450px;
+          @include mixins.shadow;
+        }
+
+        a {
+          font-size: 1.5rem;
+          font-weight: bold;
+          padding-top: 25px;
+          line-height: 35px;
+        }
+      }
+
+      &-lista {
+        background-color: #dbdbdb;
+
+        ul {
+          padding-top: 60px;
+
+          li {
+            padding: 0 25px 25px 25px;
+          }
+        }
+
+        a {
+          font-weight: bold;
+          padding: 0 0 10px 25px;
+          cursor: pointer;
+
+          &:hover {
+            color: variables.$secondary-color;
+          }
         }
       }
     }
